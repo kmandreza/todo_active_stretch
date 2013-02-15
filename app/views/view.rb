@@ -1,20 +1,25 @@
 module Output
   def print_beautiful(tasks)
     tasks.each do |task|
-      puts "#{task.id}. #{task.text} |Completed?: #{task.completed_at}| "
+      if task.completed_at == nil
+        puts "#{task.id}. #{task.task_name}"
+      else
+        puts "#{task.id}. #{task.task_name} |Completed?: #{task.completed_at}| "
+      end
+      
     end
   end
 
   def delete_notification(task)
-    puts "Deleted '#{task.text}' from your TODO list..."
+    puts "Deleted '#{task.task_name}' from your TODO list..."
   end
 
   def add_notification(task)
-    puts "Added '#{task.text}' to your TODO list..."
+    puts "Added '#{task.task_name}' to your TODO list..."
   end
 
   def complete_notification(task)
-    puts "Marked '#{task.text}' as 'complete' in your TODO list..."
+    puts "Marked '#{task.task_name}' as 'complete' in your TODO list..."
   end
   
 end
