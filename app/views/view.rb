@@ -21,5 +21,9 @@ module Output
   def complete_notification(task)
     puts "Marked '#{task.task_name}' as 'complete' in your TODO list..."
   end
+
+  def duplicate_notification
+    puts "yo you already have a task by that name! Change the name unless you want to do it twice :p"
+  end
   
 end
